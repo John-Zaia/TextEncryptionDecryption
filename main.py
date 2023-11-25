@@ -1,4 +1,4 @@
-import cryptography
+from cryptography.fernet import Fernet
 
 loop=0
 
@@ -8,7 +8,11 @@ def encryptMessage(key, message, path):
 
 #function that accepts a key value and the path to decrypt the data
 def decryptMessage(key, path):
-    print()
+    key = Fernet(key)
+    file = open(path, "rb")
+    encryptedMessage = file.read()
+    decryptedMessage = key.decrypt(encryptedMessage).decode()
+    return print("Decrypted Message ----> " + decryptedMessage)
 
 #Loop to ask the user to user if he wants to encrypt or decrypt a file
 while loop == 0:
@@ -21,11 +25,11 @@ while loop == 0:
 
 #if statement depending on if the user wants to encrypt or decrypt the message        
 if choice.lower() == "encrypt":
-    keyValue = input("Enter the key that you will be using to encrypt the message")
-    message = input("Enter the message you would like to encrypt")
-    fileName = input("Enter the name of the file you would like the encyrpted message to reside on")
+    keyValue = input("Enter the key that you will be using to encrypt the message ")
+    message = input("Enter the message you would like to encrypt ")
+    fileName = input("Enter the name of the file you would like the encyrpted message to reside on ")
     encryptMessage(keyValue, message, fileName)
 else:
-    keyValue = input("Enter the key that you will be using to decrypt the file")
-    path = input("Enter the path or file name of the file you want to decyrpt")
+    keyValue = input("Enter the key that you will be using to decrypt the file ")
+    path = input("Enter the path or file name of the file you want to decyrpt ")
     decryptMessage(keyValue, path)
