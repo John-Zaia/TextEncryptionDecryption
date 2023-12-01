@@ -4,7 +4,10 @@ loop=0
 
 #function that accepts a key value, message, and file path to encrypt the data
 def encryptMessage(key, message, path):
-    print()
+    key = Fernet(key.encode())
+    encryptedMessage = key.encrypt(message.encode())
+    file = open(path, "ab")
+    file.write(encryptedMessage)
 
 #function that accepts a key value and the path to decrypt the data
 def decryptMessage(key, path):
