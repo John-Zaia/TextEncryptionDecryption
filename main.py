@@ -17,6 +17,16 @@ def decryptMessage(key, path):
     decryptedMessage = key.decrypt(encryptedMessage).decode()
     return print("Decrypted Message ----> " + decryptedMessage)
 
+
+generateKeyChoice = input("Would you like to generate a key? ")
+
+if(generateKeyChoice.lower() == "yes"):
+    #generates key with 'b' prefix
+    generatedKey = Fernet.generate_key()
+    #reformates the key without the 'b' prefix so that it can be used
+    formattedKey = generatedKey.decode()
+    print(formattedKey)
+
 #Loop to ask the user to user if he wants to encrypt or decrypt a file
 while loop == 0:
     choice = input("Would you like to encrypt or decrypt a message. Valid choices ---> (encrypt/decrypt) ")
