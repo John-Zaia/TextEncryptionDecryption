@@ -18,7 +18,7 @@ def decryptMessage(key, path):
     return print("Decrypted Message ----> " + decryptedMessage)
 
 
-generateKeyChoice = input("Would you like to generate a key? ")
+generateKeyChoice = input("Would you like to generate a key? (yes/no) ")
 
 if(generateKeyChoice.lower() == "yes"):
     #generates key with 'b' prefix
