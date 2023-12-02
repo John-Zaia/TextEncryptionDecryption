@@ -17,3 +17,7 @@ the data, the text you want to encrypt, and the file path to save the text.
 ## Decrypting text
 When decrypting the data the code will ask you the key that will be used to decrypt
 the data and the file path of the encrypted data.
+
+## Example Key
+If you don't want to generte a key using the code you can use this example key.
+t4wlSjCPkjceEpDBJL2IQj56ZDuZVH1vj_EWZzl4Fe8=
