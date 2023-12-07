@@ -1,5 +1,8 @@
 # TextEncryptionDecryption
 
+## How do I use this code
+you can download the main.py file and run it with a python interpreter of your choice. 
+
 ## What does this code do?
 This code allows you to generate a key using the Python Cryptography.Fernet module.
 With the generated key you can either encrypt or decrypt the value. 
@@ -7,6 +10,8 @@ With the generated key you can either encrypt or decrypt the value.
 ## Generating a key
 The code will always ask if you want to generate a key when it runs. If you already
 have a key you can choose to decline and the code will continue to run as usual.
+An example of the code generating a key is shown below.
+![Example Screenshot](C:\Images\generatingKey.PNG)
 
 ## Encrypting Text
 When encrypting text make sure your key does not include the bytes prefix that 
