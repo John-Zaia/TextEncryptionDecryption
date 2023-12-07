@@ -16,9 +16,10 @@ def decryptMessage(key, path):
     return print("Decrypted Message ----> " + decryptedMessage)
 
 loop = 0
+#Error Handling to as user if he/she want to generate a key
 while loop == 0:
     generateKeyChoice = input("Would you like to generate a key? (yes/no) ")
-
+    #If statement depending on if the user wanted to generate a key
     if(generateKeyChoice.lower() == "yes"):
         #generates key with 'b' prefix
         generatedKey = Fernet.generate_key()
@@ -39,6 +40,7 @@ while loop == 0:
         print("Please enter in a valid response")
 
 loop = 0
+#Error Handling Loop
 while loop == 0:
     #if statement depending on if the user wants to encrypt or decrypt the message        
     if choice.lower() == "encrypt":
