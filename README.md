@@ -22,7 +22,7 @@ it to your clipboard or save it to a file for multiple uses.
 ## Encrypting Text
 When encrypting text make sure your key does not include the bytes prefix that 
 Python adds when generating a key as the code will not work with that prefix. 
-When encyrpting the code will ask you the key value you want to use when encrypting
+When encyrpting, the code will ask you the key value you want to use when encrypting
 the data, the text you want to encrypt, and the file path to save the text. A screenshot
 of encrypting a piece of text is shown below. 
 ![Example Screenshot](/Images/encrypting.PNG)
