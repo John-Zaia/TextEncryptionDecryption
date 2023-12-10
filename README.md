@@ -11,7 +11,7 @@ With the generated key you can either encrypt or decrypt the value.
 The code will always ask if you want to generate a key when it runs. If you already
 have a key you can choose to decline and the code will continue to run as usual.
 An example of the code generating a key is shown below.
-![Example Screenshot](Images\generatingKey.PNG;base64, BASE64_)
+![Example Screenshot](Images\generatingKey.PNG)
 
 ## Encrypting Text
 When encrypting text make sure your key does not include the bytes prefix that 
