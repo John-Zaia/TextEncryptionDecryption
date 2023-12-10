@@ -28,8 +28,8 @@ of encrypting a piece of text is shown below.
 ![Example Screenshot](/Images/encrypting.PNG)
 
 ## Decrypting text
-When decrypting the data the code will ask you the key that will be used to decrypt
-the data and the file path of the encrypted data.
+When decrypting the data the code will ask you for the key that will be used to decrypt
+the data and the file path of the encrypted data. An example is shown below
 ![Example Screenshot](/Images/decrypting.PNG)
 
 ## Example Key
