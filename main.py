@@ -2,25 +2,25 @@ from cryptography.fernet import Fernet
 
 #function that accepts a key value, message, and file path to encrypt the data
 def encryptMessage(key, message, path):
-    key = Fernet(key.encode())
-    encryptedMessage = key.encrypt(message.encode())
-    file = open(path, "ab")
-    file.write(encryptedMessage)
+    key = Fernet(key.encode()) #converts the key from a string to bytes
+    encryptedMessage = key.encrypt(message.encode()) #encrypts the message with the key
+    file = open(path, "ab") #opens the file
+    file.write(encryptedMessage) #writes the encrypted message to the file
 
 #function that accepts a key value and the path to decrypt the data
 def decryptMessage(key, path):
-    key = Fernet(key)
-    file = open(path, "rb")
-    encryptedMessage = file.read()
-    decryptedMessage = key.decrypt(encryptedMessage).decode()
-    return print("Decrypted Message ----> " + decryptedMessage)
+    key = Fernet(key.encode()) #converts the key from a string to bytes
+    file = open(path, "rb") #opens the file
+    encryptedMessage = file.read() #reads the file and saves it to variable
+    decryptedMessage = key.decrypt(encryptedMessage).decode() #uses the key to decrypt the message in the variable
+    return print("Decrypted Message ----> " + decryptedMessage) #outputs the decrypted message
 
 loop = 0
 #Error Handling to as user if he/she want to generate a key
 while loop == 0:
     generateKeyChoice = input("Would you like to generate a key? (yes/no) ")
     #If statement depending on if the user wanted to generate a key
-    if(generateKeyChoice.lower() == "yes"):
+    if(generateKeyChoice.lower() == "yes"): #lower function ignores case sensitivity
         #generates key with 'b' prefix
         generatedKey = Fernet.generate_key()
         #reformates the key without the 'b' prefix so that it can be used
