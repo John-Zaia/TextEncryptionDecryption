@@ -6,6 +6,7 @@ def encryptMessage(key, message, path):
     encryptedMessage = key.encrypt(message.encode()) #encrypts the message with the key
     file = open(path, "ab") #opens the file
     file.write(encryptedMessage) #writes the encrypted message to the file
+    file.close()
 
 #function that accepts a key value and the path to decrypt the data
 def decryptMessage(key, path):
@@ -13,6 +14,7 @@ def decryptMessage(key, path):
     file = open(path, "rb") #opens the file
     encryptedMessage = file.read() #reads the file and saves it to variable
     decryptedMessage = key.decrypt(encryptedMessage).decode() #uses the key to decrypt the message in the variable
+    file.close()
     return print("Decrypted Message ----> " + decryptedMessage) #outputs the decrypted message
 
 loop = 0
